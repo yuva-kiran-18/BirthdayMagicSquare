@@ -74,7 +74,7 @@ Only very specific patterns can satisfy MPMS.
 ## ▶️ Running the Program
 
 ```bash
-git clone 
+git clone https://github.com/yuva-kiran-18/BirthdayMagicSquare.git
 python magic.py
 Enter Date of Birth(dd/mm/yyyy)  ::   25/05/2006
 The semi magic square is ...
