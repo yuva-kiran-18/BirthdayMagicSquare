@@ -122,7 +122,7 @@ The Final Most Perfect Magic Square is ::
 8    22   3    23
 16   10   21   9
 ---
-
+```
 ## 👨‍💻 Author
 **Yuva Kiran Kumar**  
 Python Developer | Logic Designer  
