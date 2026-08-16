@@ -124,7 +124,7 @@ The Final Most Perfect Magic Square is ::
 ---
 ```
 >[!NOTE]
->Working on the Web version
+>Working on the Interface
 
 
 ## 👨‍💻 Author
