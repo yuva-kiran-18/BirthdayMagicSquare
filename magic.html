@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Magic Square</title>
+		<script src="magic.js" defer></script>
+	</head>
+	<style>
+		h1{
+			text-align: center;
+			font-size: 3.0em;
+			color: whitesmoke;
+			text-shadow:
+				1px 1px 0px white,
+				2px 2px 3px rgb(250, 162, 0);
+			letter-spacing: 3px;
+			font-weight: 700;
+		}
+		.heading{
+			color: whitesmoke;
+			text-shadow:
+				1px 1px 0px white,
+				2px 2px 3px rgb(250, 162, 0);
+		}
+		body{
+			/*background-color: rgb(47, 136, 136);*/
+			background-image: url(assets/bg_image.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		input{
+			align-items: center;
+			background-color: rgb(255, 255, 199);
+			color: black;
+			padding: 2%;
+
+		}
+		.mbox{
+			background-color: rgb(255, 255, 199);
+			width: clamp(300px,100%,400px);
+			height: 400px;
+		}
+		.row1{
+			display: flex;
+			align-content:flex-start;
+			background-color: rgb(255, 255, 199);
+			height: 25%;
+		}
+		.row2{
+			display: flex;
+			align-content:flex-start;
+			background-color: rgb(255, 255, 199);
+			height:25%;
+		}
+		.row3{
+			display: flex;
+			align-content:flex-start;
+			background-color: rgb(255, 255, 199);
+			height:25%;
+		}
+		.row4{
+			display: flex;
+			align-content:flex-start;
+			background-color: rgb(255, 255, 199);
+			height: 25%;
+		}
+		.box11{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box12{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box13{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box14{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box21{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box22{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box23{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box24{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box31{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box32{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box33{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box34{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box41{ 
+			border: 1px solid black;	
+			width:100%;
+			height: 100%;
+		}
+		.box42{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box43{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+		.box44{ 
+			border: 1px solid black;
+			width:100%;
+			height: 100%;
+		}
+
+		form{
+			background-image: url(/assets/ramanujan.png);
+			background-size: cover;
+			background-position: center;
+			width: 50%;
+			height: 150px;
+			padding: 7%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		button{
+			width: clamp(15px,30vw,100px);
+			align-self: center;
+			padding: 1.4%;
+			background-color: rgba(255, 0, 0, 0.486);
+			border: 1px solid black;
+			font-size: clamp(10px,5vw,21px);
+			border-radius: 10px;
+			
+		}
+		.box11,.box12,.box13,.box14,.box21,.box22,.box23,.box24,.box31,.box32,.box33,.box34,.box41,.box42,.box43,.box44{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		
+		
+	</style>
+	<body>
+		<h1>Magic Square</h1>
+		<h3 class="heading">Enter your Date of Birth</h3>
+		<form>
+			<input type="date" id="dob">
+			<button type="submit">SUBMIT</button>
+		</form>
+		<div class="mbox">
+			<div class="row1">
+				<div class="box11" id="box11">
+					<h3 id="a1"></h3>
+				</div>
+				<div class="box12" id="box12">
+					<h3 id="b1"></h3>
+				</div>
+				<div class="box13" id="box13">
+					<h3 id="c1"></h3>
+				</div>
+				<div class="box14" id="box14">
+					<h3 id="d1"></h3>
+				</div>
+			</div>
+			<div class="row2">
+				<div class="box21" id="box21">
+					<h3 id="a2"></h3>
+				</div>
+				<div class="box22" id="box22">
+					<h3 id="b2"></h3>
+				</div>
+				<div class="box23" id="box23">
+					<h3 id="c2"></h3>
+				</div>
+				<div class="box24" id="box24">
+					<h3 id="d2"></h3>
+				</div>
+			</div>
+			<div class="row3">
+				<div class="box31" id="box31">
+					<h3 id="a3"></h3>
+				</div>
+				<div class="box32" id="box32">
+					<h3 id="b3"></h3>
+				</div>
+				<div class="box33" id="box33">
+					<h3 id="c3"></h3>
+				</div>
+				<div class="box34" id="box34">
+					<h3 id="d3"></h3>
+				</div>
+			</div>
+			<div class="row4">
+				<div class="box41" id="box41">
+					<h3 id="a4"></h3>
+				</div>
+				<div class="box42" id="box42">
+					<h3 id="b4"></h3>
+				</div>
+				<div class="box43" id="box43">
+					<h3 id="c4"></h3>
+				</div>
+				<div class="box44" id="box44">
+					<h3 id="d4"></h3>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
