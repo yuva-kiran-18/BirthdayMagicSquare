@@ -1,251 +1,847 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Magic Square</title>
-		<script src="magic.js" defer></script>
-	</head>
-	<style>
-		h1{
-			text-align: center;
-			font-size: 3.0em;
-			color: whitesmoke;
-			text-shadow:
-				1px 1px 0px white,
-				2px 2px 3px rgb(250, 162, 0);
-			letter-spacing: 3px;
-			font-weight: 700;
-		}
-		.heading{
-			color: whitesmoke;
-			text-shadow:
-				1px 1px 0px white,
-				2px 2px 3px rgb(250, 162, 0);
-		}
-		body{
-			/*background-color: rgb(47, 136, 136);*/
-			background-image: url(assets/bg_image.png);
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-attachment: scroll;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-		input{
-			align-items: center;
-			background-color: rgb(255, 255, 199);
-			color: black;
-			padding: 2%;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-		}
-		.mbox{
-			background-color: rgb(255, 255, 199);
-			width: clamp(300px,100%,400px);
-			height: 400px;
-		}
-		.row1{
-			display: flex;
-			align-content:flex-start;
-			background-color: rgb(255, 255, 199);
-			height: 25%;
-		}
-		.row2{
-			display: flex;
-			align-content:flex-start;
-			background-color: rgb(255, 255, 199);
-			height:25%;
-		}
-		.row3{
-			display: flex;
-			align-content:flex-start;
-			background-color: rgb(255, 255, 199);
-			height:25%;
-		}
-		.row4{
-			display: flex;
-			align-content:flex-start;
-			background-color: rgb(255, 255, 199);
-			height: 25%;
-		}
-		.box11{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box12{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box13{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box14{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box21{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box22{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box23{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box24{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box31{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box32{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box33{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box34{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box41{ 
-			border: 1px solid black;	
-			width:100%;
-			height: 100%;
-		}
-		.box42{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box43{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
-		.box44{ 
-			border: 1px solid black;
-			width:100%;
-			height: 100%;
-		}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-		form{
-			background-image: url(assets/ramanujan.png);
-			background-size: cover;
-			background-position: center;
-			width: 50%;
-			height: 150px;
-			padding: 7%;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-		}
-		button{
-			width: clamp(15px,30vw,100px);
-			align-self: center;
-			padding: 1.4%;
-			background-color: rgba(255, 0, 0, 0.900);
-			border: 1px solid black;
-			font-size: clamp(10px,5vw,21px);
-			border-radius: 10px;
-			
-		}
-		.box11,.box12,.box13,.box14,.box21,.box22,.box23,.box24,.box31,.box32,.box33,.box34,.box41,.box42,.box43,.box44{
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
+    <meta
+        name="description"
+        content="Generate a personalized 4×4 birthday magic square."
+    >
 
-		
-		
-	</style>
-	<body>
-		<h1>Magic Square</h1>
-		<h3 class="heading">Enter your Date of Birth</h3>
-		<form>
-			<input type="date" id="dob">
-			<button type="submit">SUBMIT</button>
-		</form>
-		<div class="mbox">
-			<div class="row1">
-				<div class="box11" id="box11">
-					<h3 id="a1"></h3>
-				</div>
-				<div class="box12" id="box12">
-					<h3 id="b1"></h3>
-				</div>
-				<div class="box13" id="box13">
-					<h3 id="c1"></h3>
-				</div>
-				<div class="box14" id="box14">
-					<h3 id="d1"></h3>
-				</div>
-			</div>
-			<div class="row2">
-				<div class="box21" id="box21">
-					<h3 id="a2"></h3>
-				</div>
-				<div class="box22" id="box22">
-					<h3 id="b2"></h3>
-				</div>
-				<div class="box23" id="box23">
-					<h3 id="c2"></h3>
-				</div>
-				<div class="box24" id="box24">
-					<h3 id="d2"></h3>
-				</div>
-			</div>
-			<div class="row3">
-				<div class="box31" id="box31">
-					<h3 id="a3"></h3>
-				</div>
-				<div class="box32" id="box32">
-					<h3 id="b3"></h3>
-				</div>
-				<div class="box33" id="box33">
-					<h3 id="c3"></h3>
-				</div>
-				<div class="box34" id="box34">
-					<h3 id="d3"></h3>
-				</div>
-			</div>
-			<div class="row4">
-				<div class="box41" id="box41">
-					<h3 id="a4"></h3>
-				</div>
-				<div class="box42" id="box42">
-					<h3 id="b4"></h3>
-				</div>
-				<div class="box43" id="box43">
-					<h3 id="c4"></h3>
-				</div>
-				<div class="box44" id="box44">
-					<h3 id="d4"></h3>
-				</div>
-			</div>
-		</div>
-	</body>
+    <title>Birthday Magic Square</title>
+
+    <script src="magic.js" defer></script>
+
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(8, 15, 35, 0.92),
+                    rgba(24, 18, 55, 0.88)
+                ),
+                url("assets/bg_image.png");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px 16px;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================================
+           BACKGROUND EFFECTS
+        ========================================================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 420px;
+            height: 420px;
+
+            top: -180px;
+            left: -120px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 170, 0, 0.15);
+
+            filter: blur(80px);
+
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            right: -150px;
+            bottom: -180px;
+
+            border-radius: 50%;
+
+            background: rgba(120, 80, 255, 0.18);
+
+            filter: blur(90px);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           MAIN CONTAINER
+        ========================================================= */
+
+        .app {
+            position: relative;
+
+            width: min(100%, 760px);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 22px;
+
+            z-index: 1;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .header {
+            text-align: center;
+
+            animation: fadeDown 0.8s ease;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 7vw, 4rem);
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #ffd36a,
+                    #ff9d00
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            text-shadow:
+                0 10px 35px rgba(255, 174, 0, 0.25);
+        }
+
+        .heading {
+            margin-top: 7px;
+
+            font-size: clamp(0.95rem, 3vw, 1.15rem);
+
+            font-weight: 500;
+
+            color: rgba(255,255,255,0.72);
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================================================
+           INPUT CARD
+        ========================================================= */
+
+        form {
+            width: min(100%, 520px);
+
+            min-height: 175px;
+
+            padding: 28px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.14),
+                    rgba(255,255,255,0.05)
+                );
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.35),
+                inset 0 1px 0 rgba(255,255,255,0.12);
+
+            animation: fadeUp 0.8s ease;
+        }
+
+        form::before {
+            content: "YOUR BIRTH DATE";
+
+            display: block;
+
+            text-align: center;
+
+            font-size: 0.72rem;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.6);
+        }
+
+        input[type="date"] {
+            width: 100%;
+
+            padding: 15px 17px;
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            border-radius: 14px;
+
+            outline: none;
+
+            background: rgba(0,0,0,0.28);
+
+            color: #ffffff;
+
+            font-size: 1rem;
+
+            font-family: inherit;
+
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        input[type="date"]:focus {
+            border-color: rgba(255,184,60,0.9);
+
+            box-shadow:
+                0 0 0 4px rgba(255,174,0,0.12);
+
+            transform: translateY(-1px);
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           SUBMIT BUTTON
+        ========================================================= */
+
+        button {
+            width: 100%;
+
+            padding: 14px 20px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffb300,
+                    #ff7a00
+                );
+
+            color: #1d1200;
+
+            font-size: 0.95rem;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px rgba(255,132,0,0.28);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                filter 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+
+            filter: brightness(1.08);
+
+            box-shadow:
+                0 15px 32px rgba(255,132,0,0.38);
+        }
+
+        button:active {
+            transform: translateY(1px);
+
+            box-shadow:
+                0 6px 15px rgba(255,132,0,0.25);
+        }
+
+
+        /* =========================================================
+           MAGIC SQUARE CARD
+        ========================================================= */
+
+        .square-section {
+            width: min(100%, 560px);
+
+            padding: 22px;
+
+            border-radius: 28px;
+
+            border: 1px solid rgba(255,255,255,0.14);
+
+            background:
+                rgba(255,255,255,0.07);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,0.35);
+
+            animation: fadeUp 1s ease;
+        }
+
+        .square-title {
+            text-align: center;
+
+            margin-bottom: 18px;
+
+            font-size: 0.8rem;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.55);
+        }
+
+        .mbox {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+
+            gap: 8px;
+
+            padding: 8px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(0,0,0,0.25);
+
+            box-shadow:
+                inset 0 0 25px rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================================================
+           ROWS
+           IDs PRESERVED
+        ========================================================= */
+
+        .row1,
+        .row2,
+        .row3,
+        .row4 {
+            display: contents;
+        }
+
+
+        /* =========================================================
+           MAGIC SQUARE BOXES
+           IDs PRESERVED
+        ========================================================= */
+
+        .box11,
+        .box12,
+        .box13,
+        .box14,
+        .box21,
+        .box22,
+        .box23,
+        .box24,
+        .box31,
+        .box32,
+        .box33,
+        .box34,
+        .box41,
+        .box42,
+        .box43,
+        .box44 {
+
+            min-width: 0;
+            min-height: 0;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 14px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.15),
+                    rgba(255,255,255,0.055)
+                );
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.08),
+                0 7px 18px rgba(0,0,0,0.18);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .box11:hover,
+        .box12:hover,
+        .box13:hover,
+        .box14:hover,
+        .box21:hover,
+        .box22:hover,
+        .box23:hover,
+        .box24:hover,
+        .box31:hover,
+        .box32:hover,
+        .box33:hover,
+        .box34:hover,
+        .box41:hover,
+        .box42:hover,
+        .box43:hover,
+        .box44:hover {
+
+            transform: translateY(-3px) scale(1.02);
+
+            border-color:
+                rgba(255,190,70,0.55);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,190,70,0.18),
+                    rgba(255,255,255,0.07)
+                );
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.25),
+                0 0 18px rgba(255,174,0,0.08);
+        }
+
+
+        /* =========================================================
+           NUMBERS
+        ========================================================= */
+
+        .mbox h3 {
+            font-size: clamp(1.1rem, 5vw, 1.8rem);
+
+            font-weight: 800;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 3px 12px rgba(0,0,0,0.45);
+
+            transition:
+                transform 0.25s ease,
+                color 0.25s ease;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .footer {
+            text-align: center;
+
+            color: rgba(255,255,255,0.38);
+
+            font-size: 0.72rem;
+
+            letter-spacing: 0.5px;
+
+            padding-bottom: 5px;
+        }
+
+
+        /* =========================================================
+           ANIMATIONS
+        ========================================================= */
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 22px 12px;
+            }
+
+            .app {
+                gap: 17px;
+            }
+
+            form {
+                min-height: 160px;
+
+                padding: 22px;
+
+                border-radius: 20px;
+            }
+
+            .square-section {
+                padding: 14px;
+
+                border-radius: 22px;
+            }
+
+            .mbox {
+                gap: 5px;
+
+                padding: 5px;
+
+                border-radius: 16px;
+            }
+
+            .box11,
+            .box12,
+            .box13,
+            .box14,
+            .box21,
+            .box22,
+            .box23,
+            .box24,
+            .box31,
+            .box32,
+            .box33,
+            .box34,
+            .box41,
+            .box42,
+            .box43,
+            .box44 {
+                border-radius: 9px;
+            }
+
+            .mbox h3 {
+                font-size: clamp(0.95rem, 6vw, 1.4rem);
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL SCREENS
+        ========================================================= */
+
+        @media (max-width: 350px) {
+
+            body {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+
+            form {
+                padding: 18px;
+            }
+
+            .square-section {
+                padding: 10px;
+            }
+
+            .mbox {
+                gap: 4px;
+                padding: 4px;
+            }
+
+            .box11,
+            .box12,
+            .box13,
+            .box14,
+            .box21,
+            .box22,
+            .box23,
+            .box24,
+            .box31,
+            .box32,
+            .box33,
+            .box34,
+            .box41,
+            .box42,
+            .box43,
+            .box44 {
+                border-radius: 7px;
+            }
+        }
+
+
+        /* =========================================================
+           ACCESSIBILITY
+        ========================================================= */
+
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid #ffc04d;
+
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
+
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="app">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <h1>Magic Square</h1>
+
+            <h3 class="heading">
+                Enter your Date of Birth
+            </h3>
+
+        </header>
+
+
+        <!-- DATE INPUT -->
+
+        <form>
+
+            <input
+                type="date"
+                id="dob"
+                aria-label="Date of Birth"
+                required
+            >
+
+            <button type="submit">
+                GENERATE MAGIC SQUARE
+            </button>
+
+        </form>
+
+
+        <!-- MAGIC SQUARE -->
+
+        <section
+            class="square-section"
+            aria-label="Birthday Magic Square"
+        >
+
+            <div class="square-title">
+                YOUR BIRTHDAY MAGIC SQUARE
+            </div>
+
+
+            <div class="mbox">
+
+                <!-- ROW 1 -->
+
+                <div class="row1">
+
+                    <div class="box11" id="box11">
+                        <h3 id="a1"></h3>
+                    </div>
+
+                    <div class="box12" id="box12">
+                        <h3 id="b1"></h3>
+                    </div>
+
+                    <div class="box13" id="box13">
+                        <h3 id="c1"></h3>
+                    </div>
+
+                    <div class="box14" id="box14">
+                        <h3 id="d1"></h3>
+                    </div>
+
+                </div>
+
+
+                <!-- ROW 2 -->
+
+                <div class="row2">
+
+                    <div class="box21" id="box21">
+                        <h3 id="a2"></h3>
+                    </div>
+
+                    <div class="box22" id="box22">
+                        <h3 id="b2"></h3>
+                    </div>
+
+                    <div class="box23" id="box23">
+                        <h3 id="c2"></h3>
+                    </div>
+
+                    <div class="box24" id="box24">
+                        <h3 id="d2"></h3>
+                    </div>
+
+                </div>
+
+
+                <!-- ROW 3 -->
+
+                <div class="row3">
+
+                    <div class="box31" id="box31">
+                        <h3 id="a3"></h3>
+                    </div>
+
+                    <div class="box32" id="box32">
+                        <h3 id="b3"></h3>
+                    </div>
+
+                    <div class="box33" id="box33">
+                        <h3 id="c3"></h3>
+                    </div>
+
+                    <div class="box34" id="box34">
+                        <h3 id="d3"></h3>
+                    </div>
+
+                </div>
+
+
+                <!-- ROW 4 -->
+
+                <div class="row4">
+
+                    <div class="box41" id="box41">
+                        <h3 id="a4"></h3>
+                    </div>
+
+                    <div class="box42" id="box42">
+                        <h3 id="b4"></h3>
+                    </div>
+
+                    <div class="box43" id="box43">
+                        <h3 id="c4"></h3>
+                    </div>
+
+                    <div class="box44" id="box44">
+                        <h3 id="d4"></h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+            Birthday Magic Square
+        </footer>
+
+    </main>
+
+</body>
 </html>
