@@ -123,9 +123,7 @@ The Final Most Perfect Magic Square is ::
 16   10   21   9
 ---
 ```
->[!NOTE]
->Working on the Interface
-
+[https://yuva-kiran-18.github.io/BirthdayMagicSquare/](available)
 
 ## 👨‍💻 Author
 **Yuva Kiran Kumar**  
