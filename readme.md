@@ -55,80 +55,28 @@ Only very specific patterns can satisfy MPMS.
 
 ![Magic Square Types](assets/magic_types.png)
 
+>[!NOTE]
+>Encountered Logical Error in the program. Working on it
+
 ## 🧠 How It Works
 
-1. User enters their **DOB**  
-2. The program extracts:  
-   - `a0` = DD  
-   - `b0` = MM  
-   - `c0`, `d0` = year digits  
-3. The algorithm checks for valid non-negative, non-repeating values  
-4. It constructs:  
-   - Second row  
-   - Third row  
-   - Fourth row  
-   Using equations that maintain magic sum constraints.
+will be updated soon
 
 ---
 
 ## ▶️ Running the Program
 ```bash
-git clone https://github.com/yuva-kiran-18/BirthdayMagicSquare.git
+Will be updated soon
 python magic.py
 ```
 Example Output:
 ```bash
-Enter Date of Birth(dd/mm/yyyy)  ::   25/05/2006
-The semi magic square is ...
-25   5   20   6
-
-2    24   7    23
-13   17   8    18
-16   10   21   9
-
-The Ordinary Magic square is ...
-25   5   20   6
-
-7    19   12   18
-8    22   3    23
-16   10   21   9
-
-The Pan Magic Square is ...
-25   5   20   6
-
-7    19   12   18
-8    22   3    23
-16   10   21   9
-
-The complete Magic Square is ...
-25   5   20   6
-
-7    19   12   18
-8    22   3    23
-16   10   21   9
-
-The Most Perfect Magic Square is ...
-25   5   20   6
-
-7    19   12   18
-8    22   3    23
-16   10   21   9
-
-Your Birthday Satisfies All Magic Square conditions ...
-The Final Most Perfect Magic Square is ::
-
-25   5   20   6
-7    19   12   18
-8    22   3    23
-16   10   21   9
----
+Will be Updated soon
 ```
 [https://yuva-kiran-18.github.io/BirthdayMagicSquare/](available)
 
 ## 👨‍💻 Author
 **Yuva Kiran Kumar**  
-Python Developer | Logic Designer  
-
 ---
 
 ## 📜 License
